@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { google } from 'googleapis';
+// import { google } from 'googleapis';
 
-import googleAuth from '@/lib/google/auth';
+// import googleAuth from '@/lib/google/auth';
 import Timeline from '../components/Timeline';
 import Container from '../components/Container';
 import BlogPost from '../components/BlogPost';
@@ -10,20 +10,20 @@ import ProjectCard from '../components/ProjectCard';
 import VideoCard from '../components/VideoCard';
 
 export async function getStaticProps() {
-  const auth = await googleAuth.getClient();
-  const youtube = google.youtube({
-    auth,
-    version: 'v3'
-  });
+  // const auth = await googleAuth.getClient();
+  // const youtube = google.youtube({
+  //   auth,
+  //   version: 'v3'
+  // });
 
-  const response = await youtube.videos.list({
-    id: 'Pd2tVxhFnO4,FytxaSVQROc,u_o09PD_qAs',
-    part: 'snippet,statistics'
-  });
+  // const response = await youtube.videos.list({
+  //   id: 'Pd2tVxhFnO4,FytxaSVQROc,u_o09PD_qAs',
+  //   part: 'snippet,statistics'
+  // });
 
   return {
     props: {
-      videos: response.data.items
+      videos: []
     },
     revalidate: 60 * 60 // 1 hour
   };
